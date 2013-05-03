@@ -1,4 +1,2 @@
-survey_gorilla
+Bonobo Bot
 ==============
-
-Survey Gorilla
