@@ -50,3 +50,45 @@ post '/users' do
     erb :sign_up
   end
 end
+
+
+#--------- SURVEYS ----------
+
+
+# DISPLAY_SURVEYS
+
+get '/surveys'  do
+
+end
+
+get '/surveys/:id' do
+
+end
+
+post '/survey/:id' do 
+
+end
+
+get '/survey/:id/results' do
+
+end
+
+
+
+# CREATE _ EDIT _ DELETE
+
+get '/survey/new' do
+
+end
+
+post '/survey/new' do
+
+end
+
+post '/survey/:id/edit' do
+
+end
+
+delete '/survey/:id/delete' do
+
+end
