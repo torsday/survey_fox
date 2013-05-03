@@ -13,9 +13,19 @@ Survey Fox
 
 
 
+## Resources
+
+- [d3js](http://d3js.org/)
+- [Flot](http://www.flotcharts.org/)
+- [Highcharts JS](http://www.highcharts.com/)
+- [Carrier Wave](https://github.com/jnicklas/carrierwave)
+
+
 ## References
 
-- 
+- [Adding Form Fields Dynamically with jQuery](http://www.mustbebuilt.co.uk/2012/07/27/adding-form-fields-dynamically-with-jquery/)
+- [Dynamically Add Input Fields To Form Using jQuery](http://www.infotuts.com/dynamically-add-input-fields-to-form-jquery/)
+- [Google: 'jquery dynamic form fields'](https://www.google.com/search?q=jquery+dynamic+form+fields&aq=f&oq=jquery+dynamic+form+fields&aqs=chrome.0.57j0l3j60l2.491j0&sourceid=chrome&ie=UTF-8)
 
 
 
