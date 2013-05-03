@@ -1,4 +1,4 @@
-#Survey Fox
+# Survey Fox
 -----------
 
 ## User Stories
@@ -161,7 +161,7 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
 </row>
-<row name="survery_id" null="1" autoincrement="0">
+<row name="survey_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="surveys" row="id" />
 </row>
@@ -170,5 +170,4 @@
 </key>
 </table>
 </sql>
-
 ```
