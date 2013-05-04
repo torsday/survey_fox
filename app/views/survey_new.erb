@@ -2,9 +2,11 @@
   <label class="label" for="Title">Title</label>
   <input type="text" name="survey[title]" placeholder="Title">
   <input type="hidden" name="survey[author_id]" value="<%=@user.id%>">
+  
   <div class= "question">
     <label class="label" for="Question">Question</label>
-    <input type="text" name="question[description]" placeholder="What is your question?">
+    <input type="text" class="new-question" name="question[1][description]" placeholder="What is your question?"><br>
+  <input type="button" id="add_question"   value="Add Question">
   </div>
 
   <div class="submit"><input type="submit" value="Create"></div>
