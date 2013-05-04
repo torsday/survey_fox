@@ -1,12 +1,12 @@
 # DISPLAY_SURVEYS
 
 get '/surveys'  do
-
+  @surveys = Survey.all
+  p @surveys
+  erb :surveys
 end
 
-# get '/surveys/:id' do
 
-# end
 
 # post '/survey/:id' do 
 
@@ -27,12 +27,13 @@ erb :survey_new
 end
 
 post '/survey/new' do
-  p params
+p params
+p params
 @survey = Survey.create(params[:survey])
-p "this is your survey id"
-p @survey
+
+
 Question.create(description: params[:question][:description], survey_id: @survey.id)
-puts "hello"
+
 
 end
 
@@ -42,4 +43,9 @@ end
 
 delete '/survey/:id/delete' do
 
+end
+
+get '/surveys/:id' do
+  @survey = Survey.find(params[:id])
+  erb :survey_view
 end
