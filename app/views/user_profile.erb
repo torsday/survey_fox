@@ -1,0 +1,19 @@
+<h2> Your Profile Page you badass</h2>
+
+<h3><%= @user.user_name %></h3>
+
+<ul>
+  <% @user_surveys.each do |survey| %>
+  <li><h4><%=survey.title%></h4></li>
+  <ul>
+    <%survey.questions.each do |question|%>
+    <li><%=question.description%></li>
+    <ol>
+      <%question.answers.each do |answer| %>
+      <li> <%= answer.description %> </li>
+      <% end %>
+    </ol>
+    <% end %>
+  </ul>
+  <%end %>
+</ul>

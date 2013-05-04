@@ -51,4 +51,8 @@ post '/users' do
   end
 end
 
-
+get '/users/profile' do
+  @user = User.find(session[:user_id])
+  @user_surveys = @user.surveys
+  erb :user_profile
+end
