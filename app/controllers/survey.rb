@@ -23,18 +23,15 @@ end
 get '/survey/new' do
   p session
   @user = User.find(session[:user_id])
-erb :survey_new
+  erb :survey_new
 end
 
 post '/survey/new' do
-p params
-p params
-@survey = Survey.create(params[:survey])
-
-
-Question.create(description: params[:question][:description], survey_id: @survey.id)
-
-
+  @the_survey = Survey.create(params[:survey])
+  params[:question].each_pair do |k_num,descrip|
+    @the_survey.questions << Question.create(:description => descrip['description'])
+  end
+  redirect '/survey/new'
 end
 
 post '/survey/:id/edit' do
