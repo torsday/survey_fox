@@ -15,11 +15,11 @@
 
 ## Resources
 
+- [Carrier Wave](https://github.com/jnicklas/carrierwave)
 - [d3js](http://d3js.org/)
 - [Flot](http://www.flotcharts.org/)
 - [Highcharts JS](http://www.highcharts.com/)
-- [Carrier Wave](https://github.com/jnicklas/carrierwave)
-
+- [Simple Modal](http://www.ericmmartin.com/projects/simplemodal/)
 
 ## References
 
