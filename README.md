@@ -32,7 +32,7 @@
 
 ## Model
 
-![IMGUR](http://i.imgur.com/0QywqEw.png)
+![IMGUR](https://a248.e.akamai.net/camo.github.com/d7b5e9b1e1e782a022bac702224ab04141dc8565/687474703a2f2f692e696d6775722e636f6d2f35334b55544d632e706e67)
 
 #### XML
 
@@ -71,37 +71,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="417" y="672" name="surveys">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="pollster" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
-</row>
-<row name="title" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="649" y="504" name="questions">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="survey_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="surveys" row="id" />
-</row>
-<row name="question" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="139" y="517" name="users">
+</datatypes><table x="646" y="492" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -118,13 +88,28 @@
 <part>id</part>
 </key>
 </table>
-<table x="825" y="412" name="choices">
+<table x="820" y="567" name="surveys">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="question_id" null="1" autoincrement="0">
+<row name="author" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="questions" row="id" />
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="title" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="989" y="529" name="questions">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="survey_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="surveys" row="id" />
 </row>
 <row name="description" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
@@ -133,37 +118,28 @@
 <part>id</part>
 </key>
 </table>
-<table x="451" y="373" name="responses">
+<table x="997" y="425" name="answers">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="question_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="questions" row="id" />
-</row>
-<row name="choice_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="choices" row="id" />
-</row>
-<row name="respondent_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
-</row>
+<row name="description" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="381" y="519" name="completed_surveys">
+<table x="1151" y="464" name="answers_questions">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="respondent_id" null="1" autoincrement="0">
+<row name="answer_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
+<default>NULL</default><relation table="answers" row="id" />
 </row>
-<row name="survey_id" null="1" autoincrement="0">
+<row name="question_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="surveys" row="id" />
+<default>NULL</default><relation table="questions" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
