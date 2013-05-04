@@ -13,6 +13,9 @@ num_of_users.times do
     :email => Faker::Internet.email,
     :password => '123456')
 end
+User.create(:user_name => 'ctorstens', 
+            :email => 'c@c.com',
+             :password => '123456')
 users = User.all
 
 # CREATE ANSWERS
