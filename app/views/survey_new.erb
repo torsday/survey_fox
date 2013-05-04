@@ -1,0 +1,11 @@
+<form id="new_survey" method="post" action="/survey/new">
+  <label class="label" for="Title">Title</label>
+  <input type="text" name="survey[title]" placeholder="Title">
+  <input type="hidden" name="survey[author_id]" value="<%=@user.id%>">
+  <div class= "question">
+    <label class="label" for="Question">Question</label>
+    <input type="text" name="question[description]" placeholder="What is your question?">
+  </div>
+
+  <div class="submit"><input type="submit" value="Create"></div>
+</form>
