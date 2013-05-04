@@ -11,7 +11,7 @@ $(document).ready(function () {
   $('.card_box').on('click', '#add_question', function (e) {
     e.preventDefault();
     var addQuestion = "</br><div class='question_card'><div class= 'question'> <label class='label' for='Question'>Question<\/label><input type='text' class='new-question' name='question[" + ($('.question .new-question').length + 1) + "][description]' placeholder='What is your question?'><br><\/div><div class='answers'><div class='answer'><label class='label' for='Answer'>Answer<\/label><input type='text' class='new-answer' name='answer[1][description]' placeholder='What is your answer?'><br><\/div><\/div><input type='button' id='add_answer' value='Add Answer'><\/div>";
-    $('.card_box').children('.question_card').last().append(addQuestion);
+    $('.card_box').children('#add_question').before(addQuestion);
   });
 
   // ADD ANSWER TO NEW SURVEY PAGE
