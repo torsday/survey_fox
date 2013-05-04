@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :surveys
+
   attr_reader :entered_password
 
   validates :user_name, :length => { :minimum => 6, :message => "must be at least 6 characters long" }
