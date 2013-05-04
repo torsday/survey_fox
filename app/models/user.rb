@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :surveys
+  has_many :surveys, :foreign_key => "author_id"
 
   attr_reader :entered_password
 
