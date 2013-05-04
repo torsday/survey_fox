@@ -45,7 +45,7 @@ delete '/survey/:id/delete' do
 
 end
 
-get '/surveys/:id' do
+get '/survey/:id' do
   @survey = Survey.find(params[:id])
   erb :survey_view
 end

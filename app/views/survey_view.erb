@@ -1,6 +1,6 @@
 <h2><%=@survey.title%></h2>
 <ul>
-<%survey.questions.each do |question|%>
+<%@survey.questions.each do |question|%>
   <li><%=question.description%></li>
     <ol>
       <%question.answers.each do |answer| %>
