@@ -1,6 +1,10 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>Survey Fox</h1>
+  
 
+  <% if current_user %>
+    <p><a href='/survey/new'>Create a Survey</a></p>
+    <p><a href='/surveys'>View all Surveys</a></p>
+  <% end %>
 
 </div>
