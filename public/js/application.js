@@ -25,5 +25,15 @@ $(document).ready(function () {
     answers_div_of_click.append(addAnswer);
   });
 
-});
+  // SUBMIT ANSWERS TO QUESTIONS 
+  $('#user-results').submit(function(data){
+    data.preventDefault();
+    $.post('/results', $('#user-results').serialize(), function(data){
+    }).done(function(data){
+      $("#survey-box").html(data);
+    });
+  })
 
+
+
+});

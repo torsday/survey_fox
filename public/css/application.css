@@ -18,11 +18,13 @@ nav {
 }
 
 nav h1{
+  float: left;
   color: white;
-  margin: 0 0 0 15px;
+  margin: 0 0 0 0px;
+  padding: 8px 0 0 20px;
   font-size: 18pt;
   text-decoration: none;
-  width: 60%;
+  /*width: 60%;*/
   display: inline-block;
 }
 nav h1 a{
@@ -34,8 +36,10 @@ nav h1 a:hover{
   text-decoration: none;
 }
 nav ul {
+  float: right;
   display: inline-block;
-  width: 30%;
+
+  /*width: 30%;*/
   text-align: right;
 }
 

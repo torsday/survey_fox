@@ -1,5 +1,6 @@
-<h2><%=@survey.title%></h2>
-<form method="post" action="/results">
+<div id="survey-box">
+  <h2><%=@survey.title%></h2>
+<form method="post" id="user-results" action="/results">
 
 <ul>
 <%@survey.questions.each do |question|%>
@@ -16,3 +17,4 @@
 </ul>
 <input type="submit" value="FINISH THIS">
 </form>
+</div>
