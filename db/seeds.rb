@@ -14,8 +14,8 @@ num_of_users.times do
     :password => '123456')
 end
 User.create(:user_name => 'ctorstens', 
-            :email => 'c@c.com',
-             :password => '123456')
+  :email => 'c@c.com',
+  :password => '123456')
 users = User.all
 
 # CREATE ANSWERS
@@ -47,4 +47,14 @@ questions.each do |question|
   end
 end
 
+
+# CREATE RESULTS
+surveys.each do |survey|
+  survey.questions.each do |question|
+    Result.create(:respondent_id => users.sample.id,
+                  :survey_id => survey.id,
+                  :question_id => question.id,
+                  :answer_id => question.answers.sample.id)
+  end
+end
 
