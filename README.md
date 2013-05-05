@@ -171,3 +171,35 @@
 </table>
 </sql>
 ```
+
+
+
+## Explanation of HTML forms & Params
+
+``` html
+<%@survey.questions.each do |question|%>
+  <li><%=question.description%></li>
+    <ol>
+      <%question.answers.each do |answer| %>
+      <input type="hidden" name="results[<%= question.id %>][respondent_id]" value="<%=@user.id%>" >
+      <input type="hidden" name="results[<%= question.id %>][survey_id]" value="<%=@survey.id%>" >
+      <input type="hidden" name="results[<%= question.id %>][question_id]" value="<%=question.id%>" >
+      <li> <input type="radio" name="results[<%= question.id %>][answer_id]" value="<%=answer.id%>"> <%= answer.description %> </li>
+      <% end %>
+    </ol>
+<% end %>
+```
+
+``` ruby
+{"results"=>
+    {"2194"=>{
+        "respondent_id"=>"1", 
+        "survey_id"=>"198", 
+        "question_id"=>"2194", 
+        "answer_id"=>"8648"}, 
+    "2195"=>{
+        "respondent_id"=>"1", 
+        "survey_id"=>"198", 
+        "question_id"=>"2195", 
+        "answer_id"=>"8649"}}}
+```

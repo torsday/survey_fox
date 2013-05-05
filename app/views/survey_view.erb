@@ -1,12 +1,18 @@
 <h2><%=@survey.title%></h2>
+<form method="post" action="/results">
+
 <ul>
 <%@survey.questions.each do |question|%>
   <li><%=question.description%></li>
     <ol>
+      <input type="hidden" name="results[<%= question.id %>][respondent_id]" value="<%= current_user.id %>" >
+      <input type="hidden" name="results[<%= question.id %>][survey_id]" value="<%=@survey.id%>" >
+      <input type="hidden" name="results[<%= question.id %>][question_id]" value="<%=question.id%>" >
       <%question.answers.each do |answer| %>
-      <li> <%= answer.description %> </li>
+      <li> <input type="radio" name="results[<%= question.id %>][answer_id]" value="<%=answer.id%>"> <%= answer.description %> </li>
       <% end %>
     </ol>
-
 <% end %>
 </ul>
+<input type="submit" value="FINISH THIS">
+</form>

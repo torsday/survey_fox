@@ -55,5 +55,6 @@ end
 
 get '/survey/:id' do
   @survey = Survey.find(params[:id])
+  @user = User.find(session[:user_id])
   erb :survey_view
 end
