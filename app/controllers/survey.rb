@@ -28,9 +28,20 @@ end
 
 post '/survey/new' do
   @the_survey = Survey.create(params[:survey])
-  params[:question].each_pair do |k_num,descrip|
-    @the_survey.questions << Question.create(:description => descrip['description'])
+
+  params[:question].each_pair do |k_num,value|
+    the_question = Question.new(:description => value['description']) 
+    params[:question][k_num.to_s]['answers'].each do |answer_descrip|
+      the_question.answers << Answer.create(:description => answer_descrip)
+    end
+      # value['answers'].each do |answer|
+      #   the_question.answers << Answer.create(:description => answer)
+      # end
+    the_question.save
+    @the_survey.questions << the_question
   end
+  # p params
+  # p @the_survey
   redirect '/survey/new'
 end
 
