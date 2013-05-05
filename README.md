@@ -32,7 +32,7 @@
 
 ## Model
 
-![IMGUR](https://a248.e.akamai.net/camo.github.com/d7b5e9b1e1e782a022bac702224ab04141dc8565/687474703a2f2f692e696d6775722e636f6d2f35334b55544d632e706e67)
+![IMGUR](https://a248.e.akamai.net/camo.github.com/69f6e19ab0f51c9c8287f8c33fb1b7d7fc1e63b8/687474703a2f2f692e696d6775722e636f6d2f506c7a435844752e706e67)
 
 #### XML
 
@@ -133,6 +133,30 @@
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="answer_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="answers" row="id" />
+</row>
+<row name="question_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="questions" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="819" y="381" name="results">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="respondent" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="survey_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="surveys" row="id" />
+</row>
 <row name="answer_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="answers" row="id" />
