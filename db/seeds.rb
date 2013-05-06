@@ -43,11 +43,13 @@ questions.each do |question|
 end
 
 # CREATE RESULTS
-surveys.each do |survey|
-  survey.questions.each do |question|
-    Result.create(:respondent_id => users.sample.id,
-                  :survey_id => survey.id,
-                  :question_id => question.id,
-                  :answer_id => question.answers.sample.id)
+users.each do |user|
+  surveys.each do |survey|
+    survey.questions.each do |question|
+      Result.create(:respondent_id => user.id,
+        :survey_id => survey.id,
+        :question_id => question.id,
+        :answer_id => question.answers.sample.id)
+    end
   end
 end
