@@ -23,7 +23,22 @@ get '/question/:id/chart' do
 end
 
 get '/admin/chart' do
- 
- 
+
+  @num = ((Result.last.created_at - Result.first.created_at) / 60 + 1).floor
+  
+  @admin_data = []
+  interval = 60
+  start = Result.first.created_at
+  (@num + 1).times do
+  @admin_data << Result.where(:created_at => (start)..(start + interval)).count
+  interval += 60
+  p "this is your start interval"
+  p start
+  start += 60
+  end
+  p "find me"
+  p @admin_data
+
+
   erb :admin_chart
 end

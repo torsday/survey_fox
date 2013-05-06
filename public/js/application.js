@@ -34,44 +34,9 @@ $(document).ready(function () {
     });
   })
 
-// $(function () {
-//         $('#container').highcharts({
-//             chart: {
-//                 plotBackgroundColor: null,
-//                 plotBorderWidth: null,
-//                 plotShadow: false
-//             },
-//             title: {
-//                 text: 'Chart for ' + questionTitle
-//             },
-//             tooltip: {
-//               pointFormat: '{series.name}: <b>{point.percentage}%</b>',
-//               percentageDecimals: 1
-//             },
-//             plotOptions: {
-//                 pie: {
-//                     allowPointSelect: true,
-//                     cursor: 'pointer',
-//                     dataLabels: {
-//                         enabled: true,
-//                         color: '#000000',
-//                         connectorColor: '#000000',
-//                         formatter: function() {
-//                             return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
-//                         }
-//                     }
-//                 }
-//             },
-//             series: [{
-//                 type: 'pie',
-//                 name: 'percentage choosen',
-//                 data: questionData
-//             }]
-//         });
-//     });
-
+if (typeof timeAxis !== "undefined"){
 $(function () {
-        $('#container').highcharts({
+        $('#container2').highcharts({
             chart: {
                 type: 'line',
                 marginRight: 130,
@@ -79,12 +44,11 @@ $(function () {
             },
             title: {
                 text: 'Responses Over Time',
-                x: -20 //center
+                
             },
           
             xAxis: {
-                categories: ['10mins', '20mins', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                categories: timeAxis
             },
             yAxis: {
                 title: {
@@ -96,9 +60,19 @@ $(function () {
                     color: '#808080'
                 }]
             },
-            tooltip: {
-                valueSuffix: '°C'
+            
+            xAxis: {
+                title: {
+                    text: 'Time Intervals'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
             },
+
+
             legend: {
                 layout: 'vertical',
                 align: 'right',
@@ -109,10 +83,95 @@ $(function () {
             },
             series: [{
                 name: 'Responses',
-                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                data: adminData
             }]
         });
-    });
+    });}
+
+if (typeof timeAxis === "undefined"){
+
+$(function () {
+        $('#container1').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Chart for ' + questionTitle
+            },
+            tooltip: {
+              pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+              percentageDecimals: 1
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        formatter: function() {
+                            return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'percentage choosen',
+                data: questionData
+            }]
+        });
+    });}
+
+
+
+// $(function () {
+//         $('#container').highcharts({
+//             chart: {
+//                 type: 'column'
+//             },
+//             title: {
+//                 text: 'Things created per 2 mins'
+//             },
+//             subtitle: {
+//                 text: 'Source: dbc.com'
+//             },
+//             xAxis: {
+//                 categories: timeAxis
+//             },
+//             yAxis: {
+//                 min: 0,
+//                 title: {
+//                     text: 'results created'
+//                 }
+//             },
+//             tooltip: {
+//                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+//                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+//                     '<td style="padding:0"><b>{point.y:.1f} results created</b></td></tr>',
+//                 footerFormat: '</table>',
+//                 shared: true,
+//                 useHTML: true
+//             },
+//             plotOptions: {
+//                 column: {
+//                     pointPadding: 0.2,
+//                     borderWidth: 0
+//                 }
+//             },
+//             series: [{
+//                 name: 'Tokyo',
+//                 data: adminData
+//             }]
+//         });
+//     });
+    
+
+
+
     
 
 

@@ -1,1 +1,15 @@
-<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<div id="container2" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<script>
+
+<% 
+@time_axis = ["0"]
+
+i = 0
+@num.times do |something|
+@time_axis << (i + 1).to_s
+i += 1
+end %>
+
+var timeAxis = <%= @time_axis %>
+var adminData = <%= @admin_data %>
+</script>
