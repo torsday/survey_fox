@@ -37,8 +37,6 @@ post '/survey/new' do
     the_question.save
     @the_survey.questions << the_question
   end
-  # p params
-  # p @the_survey
   redirect '/survey/new'
 end
 
