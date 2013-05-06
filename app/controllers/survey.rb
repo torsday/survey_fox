@@ -2,7 +2,6 @@
 
 get '/surveys'  do
   @surveys = Survey.all
-  p @surveys
   erb :surveys
 end
 
@@ -12,9 +11,7 @@ end
 
 # end
 
-get '/survey/:id/results' do
 
-end
 
 
 

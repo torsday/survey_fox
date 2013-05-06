@@ -1,3 +1,4 @@
+<ol>
 <% @surveys.each do |survey| %>
-<p><a href="/survey/<%=survey.id%>"><%=survey.title%></a></p>
+<li><a href="/survey/<%=survey.id%>"><%=survey.title%></a>  <a href="/survey/<%=survey.id%>/results">(results)</a></li>
 <% end %>

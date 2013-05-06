@@ -86,3 +86,19 @@ form.quirks {
   margin-right: 20px;
   width: 200px;
 }
+
+table {
+  width:350px;
+  /*border: 1px solid darkgray;*/
+}
+td{
+ width:50%;
+ padding: 5px;
+}
+
+tr:first-child {
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}

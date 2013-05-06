@@ -1,0 +1,17 @@
+
+<script>
+<%
+@question_data =[]
+@question.answers.each do |answer|
+@question_data << [answer.description, answer.results.count]
+end %>
+
+var questionTitle = "<%= @question.description %>";
+var questionData = <%= @question_data %>
+
+</script>
+
+
+
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>

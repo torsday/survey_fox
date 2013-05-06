@@ -1,0 +1,19 @@
+
+<h1> results for <%= @survey.title %></h1>
+<%@survey.questions.each do |question|%>
+
+<table>
+  <tr>
+    <td><a href="/question/<%=question.id%>/chart"><%= question.description %></a></td>
+  </tr>
+  <tr>
+    <td>Answer</td>
+    <td>Count</td>
+  </tr>
+    <%question.answers.each do |answer|%>
+    <tr>
+    <td><%= answer.description %></td>
+    <td><%= answer.results.length %> </td>
+  </tr><br>
+<% end %>
+<% end %>

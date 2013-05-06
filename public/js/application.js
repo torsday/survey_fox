@@ -34,6 +34,86 @@ $(document).ready(function () {
     });
   })
 
+// $(function () {
+//         $('#container').highcharts({
+//             chart: {
+//                 plotBackgroundColor: null,
+//                 plotBorderWidth: null,
+//                 plotShadow: false
+//             },
+//             title: {
+//                 text: 'Chart for ' + questionTitle
+//             },
+//             tooltip: {
+//               pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+//               percentageDecimals: 1
+//             },
+//             plotOptions: {
+//                 pie: {
+//                     allowPointSelect: true,
+//                     cursor: 'pointer',
+//                     dataLabels: {
+//                         enabled: true,
+//                         color: '#000000',
+//                         connectorColor: '#000000',
+//                         formatter: function() {
+//                             return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+//                         }
+//                     }
+//                 }
+//             },
+//             series: [{
+//                 type: 'pie',
+//                 name: 'percentage choosen',
+//                 data: questionData
+//             }]
+//         });
+//     });
+
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'line',
+                marginRight: 130,
+                marginBottom: 25
+            },
+            title: {
+                text: 'Responses Over Time',
+                x: -20 //center
+            },
+          
+            xAxis: {
+                categories: ['10mins', '20mins', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            yAxis: {
+                title: {
+                    text: 'Amount of Results'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '°C'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -10,
+                y: 100,
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Responses',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+            }]
+        });
+    });
+    
 
 
 });

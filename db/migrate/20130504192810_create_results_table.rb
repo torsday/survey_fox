@@ -5,6 +5,7 @@ class CreateResultsTable < ActiveRecord::Migration
       t.references :survey
       t.references :answer
       t.references :question
+      t.timestamps
     end
   end
 end
