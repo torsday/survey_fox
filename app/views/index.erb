@@ -1,11 +1,11 @@
-<div class="container">
-  <h1>Survey Fox</h1>
-  
+
+  <h1>Survey Cloud</h1>
+  <h2> wow! take a survey in THE "cloud!"</h2>
 
   <% if current_user %>
+  <p><a href='/admin/chart'>See Responses Per Minute!</a></p>
+
     <p><a href='/survey/new'>Create a Survey</a></p>
     <p><a href='/surveys'>View all Surveys</a></p>
-    <p><a href='/survey/#'>Take a Survey</a></p>
   <% end %>
 
-</div>

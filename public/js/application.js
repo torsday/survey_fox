@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  
   // LOGOUT
   $('a#sign-out').on("click", function (e) {
     e.preventDefault();
@@ -33,8 +33,9 @@ $(document).ready(function () {
       $("#survey-box").html(data);
     });
   })
-
+setInterval(function(){ 
 if (typeof timeAxis !== "undefined"){
+  window.setTimeout("window.location.reload();",15000);
 $(function () {
         $('#container2').highcharts({
             chart: {
@@ -56,7 +57,7 @@ $(function () {
                 },
                 plotLines: [{
                     value: 0,
-                    width: 1,
+                    width: 5,
                     color: '#808080'
                 }]
             },
@@ -86,7 +87,7 @@ $(function () {
                 data: adminData
             }]
         });
-    });}
+    });} }, 3500);
 
 if (typeof timeAxis === "undefined"){
 
